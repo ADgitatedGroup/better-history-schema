@@ -1,26 +1,30 @@
 mongoose = require('mongoose')
 
 tag = mongoose.Schema
-  name: String
-  slug: String
+  name:
+    type: String
+    required: true
+  slug:
+    type: String
+    required: true
   sites: [{
-    url: String
-    title: String
-    datetime: String
-    image: String
+    url:
+      type: String
+      required: true
+    title:
+      type: String
+      required: true
+    datetime:
+      type: String
+      required: true
+    image:
+      type: String
+      required: true
   }]
-
-tag.path('name').validate (value) ->
-  false unless value?
-, 'missing tag name'
 
 tag.path('sites').validate (value) ->
   false unless value?
 , 'missing sites'
-
-tag.path('slug').validate (value) ->
-  false unless value?
-, 'missing tag slug'
 
 tag.path('name').validate (value) ->
   !/[\"\'\~\,\.\|\(\)\{\}\[\]\;\:\<\>\^\*\%\^]/.test(value)

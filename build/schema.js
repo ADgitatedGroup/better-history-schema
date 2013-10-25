@@ -5,35 +5,41 @@
   mongoose = require('mongoose');
 
   tag = mongoose.Schema({
-    name: String,
-    slug: String,
+    name: {
+      type: String,
+      required: true
+    },
+    slug: {
+      type: String,
+      required: true
+    },
     sites: [
       {
-        url: String,
-        title: String,
-        datetime: String,
-        image: String
+        url: {
+          type: String,
+          required: true
+        },
+        title: {
+          type: String,
+          required: true
+        },
+        datetime: {
+          type: String,
+          required: true
+        },
+        image: {
+          type: String,
+          required: true
+        }
       }
     ]
   });
-
-  tag.path('name').validate(function(value) {
-    if (value == null) {
-      return false;
-    }
-  }, 'missing tag name');
 
   tag.path('sites').validate(function(value) {
     if (value == null) {
       return false;
     }
   }, 'missing sites');
-
-  tag.path('slug').validate(function(value) {
-    if (value == null) {
-      return false;
-    }
-  }, 'missing tag slug');
 
   tag.path('name').validate(function(value) {
     return !/[\"\'\~\,\.\|\(\)\{\}\[\]\;\:\<\>\^\*\%\^]/.test(value);

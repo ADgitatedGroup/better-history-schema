@@ -2,11 +2,15 @@
   "name": "better-history-schema",
   "version": "0.5.1",
   "private": true,
+  "scripts": {
+    "test": "node_modules/.bin/jasmine-node --coffee spec/"
+  },
   "main": "build/schema.js",
   "dependencies": {
     "mongoose": "3.6.20"
   },
   "devDependencies": {
-    "coffee-script": "1.6.3"
+    "coffee-script": "1.6.3",
+    "jasmine-node": "1.11.0"
   }
 }
