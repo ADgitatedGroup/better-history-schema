@@ -87,15 +87,3 @@ describe "Tag Schema", ->
       @tag.validate (err) ->
         expect(err.errors['sites.0.title']).toBeDefined()
         done()
-
-    it "errors when a site datetime is empty", (done) ->
-      @tag.sites[0].datetime = ''
-      @tag.validate (err) ->
-        expect(err.errors['sites.0.datetime']).toBeDefined()
-        done()
-
-    it "errors when a site image is empty", (done) ->
-      @tag.sites[0].image = ''
-      @tag.validate (err) ->
-        expect(err.errors['sites.0.image']).toBeDefined()
-        done()
