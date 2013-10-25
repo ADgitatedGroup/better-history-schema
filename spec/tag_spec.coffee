@@ -9,8 +9,6 @@ describe "Tag Schema", ->
       sites: [{
         title: 'awesome games'
         url: 'http://games.com'
-        datetime: 23141423423324
-        image: 'base64image'
       }]
 
     @tag = new Tag properties
