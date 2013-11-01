@@ -51,3 +51,4 @@ tag.path('name').validate (value) ->
 , 'Invalid tag name'
 
 exports.tag = tag
+exports.user = user
