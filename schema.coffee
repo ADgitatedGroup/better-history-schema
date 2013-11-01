@@ -1,5 +1,27 @@
 mongoose = require('mongoose')
 
+user = mongoose.Schema
+  authId:
+    type: String
+    required: true
+  tags: [
+    name:
+      type: String
+      required: true
+    sites: [{
+      url:
+        type: String
+        required: true
+      title:
+        type: String
+        required: true
+      datetime:
+        type: String
+      image:
+        type: String
+    }]
+  ]
+
 tag = mongoose.Schema
   name:
     type: String
