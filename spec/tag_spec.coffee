@@ -5,7 +5,6 @@ describe "Tag Schema", ->
   beforeEach ->
     properties =
       name: 'games'
-      slug: 'games-1'
       sites: [{
         title: 'awesome games'
         url: 'http://games.com'
@@ -60,12 +59,6 @@ describe "Tag Schema", ->
       @tag.validate (err) ->
         expect(err.errors.name).toBeDefined()
         done()
-
-  it "errors when the slug is blank", (done) ->
-    @tag.slug = ''
-    @tag.validate (err) ->
-      expect(err.errors.slug).toBeDefined()
-      done()
 
   it "errors when the sites are null", (done) ->
     @tag.sites = null

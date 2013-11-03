@@ -26,9 +26,6 @@ tag = mongoose.Schema
   name:
     type: String
     required: true
-  slug:
-    type: String
-    required: true
   sites: [{
     url:
       type: String
