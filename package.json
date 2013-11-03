@@ -1,6 +1,6 @@
 {
   "name": "better-history-schema",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "test": "node_modules/.bin/jasmine-node --coffee spec/"
