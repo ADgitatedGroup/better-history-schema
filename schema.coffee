@@ -4,6 +4,9 @@ user = mongoose.Schema
   authId:
     type: String
     required: true
+  sessionId:
+    type: String
+    required: true
   tags: [
     name:
       type: String

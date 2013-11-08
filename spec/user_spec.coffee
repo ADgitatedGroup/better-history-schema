@@ -5,6 +5,7 @@ describe "User Schema", ->
   beforeEach ->
     properties =
       authId: '2314124234'
+      sessionId: '456456456'
 
     @user = new User properties
 

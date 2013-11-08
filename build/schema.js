@@ -9,6 +9,10 @@
       type: String,
       required: true
     },
+    sessionId: {
+      type: String,
+      required: true
+    },
     tags: [
       {
         name: {
