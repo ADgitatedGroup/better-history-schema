@@ -5,10 +5,11 @@ describe "User Schema", ->
   beforeEach ->
     properties =
       authId: '2314124234'
-      sessionId: '456456456'
+      subId: '456456456'
       email: 'user@gmail.com'
       firstName: 'Bill'
       lastName: 'Smith'
+      purchased: false
 
     @user = new User properties
 

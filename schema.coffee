@@ -1,10 +1,10 @@
 mongoose = require('mongoose')
 
 user = mongoose.Schema
-  authId:
+  subId:
     type: String
     required: true
-  sessionId:
+  authId:
     type: String
     required: true
   avatar:
@@ -17,6 +17,9 @@ user = mongoose.Schema
     required: true
   lastName:
     type: String
+    required: true
+  purchased:
+    type: Boolean
     required: true
   tags: [
     name:
