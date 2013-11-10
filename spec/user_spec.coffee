@@ -6,6 +6,9 @@ describe "User Schema", ->
     properties =
       authId: '2314124234'
       sessionId: '456456456'
+      email: 'user@gmail.com'
+      firstName: 'Bill'
+      lastName: 'Smith'
 
     @user = new User properties
 
