@@ -1,4 +1,5 @@
 mongoose = require('mongoose')
+uniqueValidator = require('mongoose-unique-validator')
 
 site = mongoose.Schema
   url:
@@ -16,12 +17,14 @@ tag = mongoose.Schema
   name:
     type: String
     required: true
+    unique: true
   sites: [site]
 
 user = mongoose.Schema
   subId:
     type: String
     required: true
+    unique: true
   authId:
     type: String
     required: true
@@ -48,6 +51,9 @@ tag.path('sites').validate (value) ->
 tag.path('name').validate (value) ->
   !/[\"\'\~\,\.\|\(\)\{\}\[\]\;\:\<\>\^\*\%\^]/.test(value)
 , 'Invalid tag name'
+
+tag.plugin(uniqueValidator)
+user.plugin(uniqueValidator)
 
 exports.tag = tag
 exports.user = user
