@@ -1,5 +1,23 @@
 mongoose = require('mongoose')
 
+site = mongoose.Schema
+  url:
+    type: String
+    required: true
+  title:
+    type: String
+    required: true
+  datetime:
+    type: String
+  image:
+    type: String
+
+tag = mongoose.Schema
+  name:
+    type: String
+    required: true
+  sites: [site]
+
 user = mongoose.Schema
   subId:
     type: String
@@ -21,27 +39,7 @@ user = mongoose.Schema
   purchased:
     type: Boolean
     required: true
-  tags: [{
-    type: mongoose.Schema.Types.ObjectId
-    ref: 'Tag'
-  }]
-
-tag = mongoose.Schema
-  name:
-    type: String
-    required: true
-  sites: [{
-    url:
-      type: String
-      required: true
-    title:
-      type: String
-      required: true
-    datetime:
-      type: String
-    image:
-      type: String
-  }]
+  tags: [tag]
 
 tag.path('sites').validate (value) ->
   false unless value?
@@ -53,3 +51,4 @@ tag.path('name').validate (value) ->
 
 exports.tag = tag
 exports.user = user
+exports.site = site
