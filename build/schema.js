@@ -41,10 +41,6 @@
   });
 
   tag = mongoose.Schema({
-    _creator: {
-      type: Number,
-      ref: 'User'
-    },
     name: {
       type: String,
       required: true
