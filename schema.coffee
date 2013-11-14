@@ -1,7 +1,28 @@
 mongoose = require('mongoose')
-uniqueValidator = require('mongoose-unique-validator')
 
 site = mongoose.Schema
+
+tag = mongoose.Schema
+  name:
+    type: String
+    required: true
+  sites: [{
+    url:
+      type: String
+      required: true
+    title:
+      type: String
+      required: true
+    datetime:
+      type: String
+    image:
+      type: String
+  }]
+
+site = mongoose.Schema
+  _creator:
+    type: mongoose.Schema.Types.ObjectId
+    ref: 'User'
   url:
     type: String
     required: true
@@ -12,19 +33,15 @@ site = mongoose.Schema
     type: String
   image:
     type: String
-
-tag = mongoose.Schema
-  name:
-    type: String
-    required: true
-    unique: true
-  sites: [site]
+  tags: [{
+    name:
+      type: String
+  }]
 
 user = mongoose.Schema
   subId:
     type: String
     required: true
-    unique: true
   authId:
     type: String
     required: true
@@ -42,7 +59,6 @@ user = mongoose.Schema
   purchased:
     type: Boolean
     required: true
-  tags: [tag]
 
 tag.path('sites').validate (value) ->
   false unless value?
@@ -51,9 +67,6 @@ tag.path('sites').validate (value) ->
 tag.path('name').validate (value) ->
   !/[\"\'\~\,\.\|\(\)\{\}\[\]\;\:\<\>\^\*\%\^]/.test(value)
 , 'Invalid tag name'
-
-tag.plugin(uniqueValidator)
-user.plugin(uniqueValidator)
 
 exports.tag = tag
 exports.user = user
