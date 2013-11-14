@@ -21,23 +21,10 @@ user = mongoose.Schema
   purchased:
     type: Boolean
     required: true
-  tags: [
-    name:
-      type: String
-      required: true
-    sites: [{
-      url:
-        type: String
-        required: true
-      title:
-        type: String
-        required: true
-      datetime:
-        type: String
-      image:
-        type: String
-    }]
-  ]
+  tags: [{
+    type: mongoose.Schema.Types.ObjectId
+    ref: 'Tag'
+  }]
 
 tag = mongoose.Schema
   name:

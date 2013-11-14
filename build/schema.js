@@ -34,28 +34,8 @@
     },
     tags: [
       {
-        name: {
-          type: String,
-          required: true
-        },
-        sites: [
-          {
-            url: {
-              type: String,
-              required: true
-            },
-            title: {
-              type: String,
-              required: true
-            },
-            datetime: {
-              type: String
-            },
-            image: {
-              type: String
-            }
-          }
-        ]
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Tag'
       }
     ]
   });
