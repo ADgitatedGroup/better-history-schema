@@ -1,8 +1,7 @@
 mongoose = require('mongoose')
+Schema = mongoose.Schema
 
-site = mongoose.Schema
-
-tag = mongoose.Schema
+tag = new Schema
   name:
     type: String
     required: true
@@ -19,9 +18,9 @@ tag = mongoose.Schema
       type: String
   }]
 
-site = mongoose.Schema
+site = new Schema
   _creator:
-    type: mongoose.Schema.Types.ObjectId
+    type: Schema.Types.ObjectId
     ref: 'User'
   url:
     type: String
@@ -38,7 +37,7 @@ site = mongoose.Schema
       type: String
   }]
 
-user = mongoose.Schema
+user = new Schema
   subId:
     type: String
     required: true
