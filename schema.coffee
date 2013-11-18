@@ -32,10 +32,7 @@ site = new Schema
     type: String
   image:
     type: String
-  tags: [{
-    name:
-      type: String
-  }]
+  tags: [String]
 
 user = new Schema
   subId:
