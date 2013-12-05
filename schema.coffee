@@ -14,9 +14,13 @@ tag = new Schema
       required: true
     datetime:
       type: String
+      required: true
     image:
       type: String
   }]
+  _creator:
+    type: Schema.Types.ObjectId
+    ref: 'User'
 
 site = new Schema
   _creator:
@@ -30,6 +34,7 @@ site = new Schema
     required: true
   datetime:
     type: String
+    required: true
   image:
     type: String
   tags: [String]
@@ -54,6 +59,11 @@ user = new Schema
     required: true
   purchased:
     type: Boolean
+    required: true
+  purchasedAt:
+    type: String
+  createdAt:
+    type: String
     required: true
 
 tag.path('sites').validate (value) ->

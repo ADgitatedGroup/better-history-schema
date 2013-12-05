@@ -22,13 +22,18 @@
           required: true
         },
         datetime: {
-          type: String
+          type: String,
+          required: true
         },
         image: {
           type: String
         }
       }
-    ]
+    ],
+    _creator: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
   });
 
   site = new Schema({
@@ -45,7 +50,8 @@
       required: true
     },
     datetime: {
-      type: String
+      type: String,
+      required: true
     },
     image: {
       type: String
@@ -79,6 +85,13 @@
     },
     purchased: {
       type: Boolean,
+      required: true
+    },
+    purchasedAt: {
+      type: String
+    },
+    createdAt: {
+      type: String,
       required: true
     }
   });
