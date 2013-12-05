@@ -14,7 +14,6 @@ tag = new Schema
       required: true
     datetime:
       type: String
-      required: true
     image:
       type: String
   }]
