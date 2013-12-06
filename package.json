@@ -3,7 +3,7 @@
   "version": "1.6.8",
   "private": true,
   "scripts": {
-    "test": "node_modules/.bin/jasmine-node --coffee spec/"
+    "test": "make test"
   },
   "main": "build/schema.js",
   "dependencies": {
