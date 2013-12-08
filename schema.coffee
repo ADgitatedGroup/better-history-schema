@@ -1,6 +1,24 @@
 mongoose = require('mongoose')
 Schema = mongoose.Schema
 
+event = new Schema
+  url:
+    type: String
+    required: true
+  statusCode:
+    type: Number
+    required: true
+  data: {}
+  createdAt:
+    type: Date
+    required: true
+  ip:
+    type: String
+    required: true
+  _user:
+    type: mongoose.Schema.Types.ObjectId
+    ref: 'User'
+
 tag = new Schema
   name:
     type: String
@@ -76,3 +94,4 @@ tag.path('name').validate (value) ->
 exports.tag = tag
 exports.user = user
 exports.site = site
+exports.event = event
