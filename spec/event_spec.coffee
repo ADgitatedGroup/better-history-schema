@@ -14,6 +14,7 @@ describe "Event Schema", ->
     @properties =
       ip: '127.0.0.1'
       statusCode: 200
+      method: 'GET'
       url: '/user/tags'
       data: {}
       createdAt: new Date().toString()
@@ -29,3 +30,4 @@ describe "Event Schema", ->
     it_requires_field 'statusCode'
     it_requires_field 'url'
     it_requires_field 'createdAt'
+    it_requires_field 'method'

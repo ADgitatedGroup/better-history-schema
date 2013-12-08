@@ -20,6 +20,10 @@
       type: Date,
       required: true
     },
+    method: {
+      type: String,
+      required: true
+    },
     ip: {
       type: String,
       required: true
