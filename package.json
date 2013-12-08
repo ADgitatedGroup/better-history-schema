@@ -3,7 +3,6 @@
   "version": "1.7.0",
   "private": true,
   "scripts": {
-    "install": "ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit",
     "test": "make test"
   },
   "main": "build/schema.js",
