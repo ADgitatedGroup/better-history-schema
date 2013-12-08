@@ -1,6 +1,6 @@
 {
   "name": "better-history-schema",
-  "version": "1.6.8",
+  "version": "1.7.0",
   "private": true,
   "scripts": {
     "install": "ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit",
